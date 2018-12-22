@@ -34,18 +34,20 @@
 <table class="table" id="table1">
   <thead class="thead-dark">
     <tr>
-      <th scope="col"></th>
+      <th scope="col">id</th>
       <th scope="col">user id</th>
       <th scope="col">title</th>
       <th scope="col">body</th>
+      <th scope="col"> Delete</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = "let obj of product" (click) = "onSelect(obj) ">
-      <th></th>
+    <tr *ngFor = "let obj of product" >
+      <td (click) = "onSelect(obj) ">{{obj.id}}</td>
       <td>{{obj.userId}}</td>
       <td>{{obj.title}}</td>
       <td>{{obj.body}}</td>
+      <td><button (click) = "delete(obj.id)">Delete</button></td>
     </tr>
     
   </tbody>

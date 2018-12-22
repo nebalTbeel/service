@@ -16,7 +16,8 @@ product = [];
     this.api.getProduct().subscribe(products =>this.product =products )
 
   }
-  selectedObj ={}
+  /********************************************** */
+  selectedObj =[]
 id=this.id;
 title = this.title
 body = this.body
@@ -25,7 +26,7 @@ body = this.body
   addProduct(){
     let product ={
       "userId": this.id,
-      "id": 101,
+      "id": 5,
       "title": this.title,
       "body": this.body
         }
@@ -33,12 +34,16 @@ body = this.body
    
     if(this.id && this.title && this.body){
      
-     if(this.api.addProduct(product).subscribe(res =>this.selectedObj = res )) {
-  console.log(`selected obj = ${this.selectedObj}`);}
-      }
-
+     this.api.addProduct(product).subscribe(res =>this.product.push(res))
+      
+    }
   }
-
+  /************************************ */
+  del
+  delete(id){
+    this.api.delete(id).subscribe(products =>this.del =products )
+console.log(this.del);
+  }
   /************************************* */
   onSelect(api){
 

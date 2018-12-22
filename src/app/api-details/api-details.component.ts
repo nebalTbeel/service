@@ -12,16 +12,17 @@ import {ApiServiceService} from '../api-service.service';
 export class ApiDetailsComponent implements OnInit {
 
   constructor(private apii: ApiServiceService ,private route: ActivatedRoute ) { }
+  pp = [];
   secId
   description
-  product = [];
   ngOnInit() {
-    this.apii.getProduct().subscribe(products => this.product = products)
-
     let id = parseInt (this.route.snapshot.paramMap.get('id'));
     this.secId = id;
 
-console.log(this.product);
+ this.apii.getProductById(id).subscribe(products =>this.pp =products )
+
+console.log(this.pp);
+
   /*  let desc = this.product.find(x => x.id === id).body;
     this.description = desc;
 */
