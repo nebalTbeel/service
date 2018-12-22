@@ -22,6 +22,7 @@ public description;
   ngOnInit() {
     let id = parseInt (this.route.snapshot.paramMap.get('id'));
     this.secId = id;
+    
     let desc = this.setions.types.find(x => x.id === id).description;
    this.description = desc;
   
