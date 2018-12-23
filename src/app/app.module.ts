@@ -34,4 +34,5 @@ import { ApiDetailsComponent } from './api-details/api-details.component'
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

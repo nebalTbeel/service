@@ -6,3 +6,11 @@ width : 70%;
 margin-left: 100px;
 
 }
+.NgIfElse {
+    show: boolean = true;
+  }
+
+ .visibility{
+visibility: visible;
+
+ }

@@ -9,11 +9,11 @@ import {Iproduct} from './models/product'
 export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
-  url= '../assets/product.json';
-  public getProductById(id: number):Observable<Iproduct[]>{
-    let url= '../assets/product.json';
+ url= 'http://localhost:3000/products';
 
-    return this.http.get<Iproduct[]>(`${url}/${id}`);
+  public getProductById(id: number):Observable<Iproduct[]>{
+
+    return this.http.get<Iproduct[]>(`${this.url}/${id}`);
 }
 /********************************* */
 
@@ -24,7 +24,7 @@ export class ApiServiceService {
 
 /******************************** */
      addProduct(obj){
-  
+
       return this.http.post<Iproduct>(this.url,obj)
     } 
 
