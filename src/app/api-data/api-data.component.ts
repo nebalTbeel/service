@@ -29,6 +29,7 @@ show = false;
   ngOnInit() {
 
     this.api.getProduct().subscribe(products =>this.product =products )
+ 
   }
   /********************************************** */
   selectedObj =[]
@@ -42,12 +43,28 @@ show = false;
   category = this.category
   image = this.image
    
-  
+
 
   addProduct(){
-   let image = this.image + Date()
+/*
+    let fi = this.image.nativeElement;
+if (fi.files && fi.files[0]) {
+    let fileToUpload = fi.files[0];
+    this.api
+        .upload(fileToUpload)
+        .subscribe(res => {
+            console.log(res);
+        });
+    }
+*/
+   let las_obj = this.product[this.product.length-1];
+   let last_id=this.product[this.product.length-1].id;
+    last_id++;
+    let image = this.image + Date()
+
+
     let product ={
-      "id": this.id,
+      "id": last_id,
       "name": this.name,
       "size": this.size,
       "color": this.color,
@@ -73,11 +90,10 @@ console.log(this.del);
 /************************************ */
 prom = {}
 edit(id){
-this.show = !this.show;
+this.show = true;
 this.api.getProductById(id).subscribe(products =>this.prom =products )
 
 }
-
 
 updateProduct(){
   let product ={
@@ -88,8 +104,11 @@ updateProduct(){
     "prand": this.prand,
     "category": this.category
       }
-
-      console.log(product);
+console.log(product)
+      this.api.updateProduct(product,this.id).subscribe(res =>this.product.push(res))
 
 }
+
+
+
 }

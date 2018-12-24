@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -11,8 +9,9 @@ import { SectionDetailsComponent } from './section-details/section-details.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ApiDataComponent } from './api-data/api-data.component';
 import {FormsModule} from '@angular/forms';
-import { ApiDetailsComponent } from './api-details/api-details.component'
-
+import { ApiDetailsComponent } from './api-details/api-details.component';
+import { LoginComponent } from './login/login.component'
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,9 @@ import { ApiDetailsComponent } from './api-details/api-details.component'
     SectiosComponent,
     SectionDetailsComponent,
     ApiDataComponent,
-    ApiDetailsComponent
+    ApiDetailsComponent,
+    LoginComponent,
+    FileSelectDirective
     
     ],
   imports: [

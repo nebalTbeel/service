@@ -3,9 +3,8 @@ Products Management</h1>
 <br>
 <div id=addform>
 <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">id</label>
   <div class="col-4">
-    <input class="form-control"  id="example-text-input" value = {{prom.id}} [(ngModel)]="id"  >
+    <input class="form-control"  hidden id="example-text-input" value = {{prom.id}} [(ngModel)]="id"  >
   </div>
 </div>
 <div class="form-group row">
@@ -48,7 +47,7 @@ Products Management</h1>
 <div class="form-group row">
   <label for="example-email-input" class="col-2 col-form-label">Image</label>
   <div class="col-4">
-    <input type="file" class="form-control"  id="example-email-input"  value = {{prom.image}} [(ngModel)] ="image"   >
+    <input type="file" class="form-control"  id="example-email-input"   [(ngModel)] ="image">
   </div>
 </div>
 
