@@ -12,28 +12,33 @@
 <body>
   
 
+<!-- <app-card> card in sections </app-card> -->
 
-  <h1 id="title">الأقسام</h1>
 
-
+<br>
     <div class="list-group" id="list">
       <p class="list-group-item list-group-item-action" 
       *ngFor="let obj of data" (click) = "onSelect(obj) "> 
-       {{obj.name}} / {{obj.id}} 
+       {{obj.name}}   {{obj.id}}
 
        
       </p>
 
     </div>
 
-    
- <!--<div *ngFor="let obj of product">
+ 
+    <!-- <form [formGroup] = 'myForm' (ngSubmit) = 'onSubmit()' >
+name : <input formControlName = 'name' #name /> <br>
+<span >{{errorReq}}</span>
+age : <input formControlName = 'age' #age />
 
-{{obj.id}}
- </div>
 
--->
+<button type="button" (click)='resetForm()'>reset</button>
+<button>add</button>
+    </form> -->
 
+
+  
 
 </body>
 </html>

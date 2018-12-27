@@ -2,79 +2,69 @@
   "products": [
     {
       "id": 1,
-      "name": "jacket",
+      "name": "blouse",
       "size": "2",
       "color": "red",
       "prand": "fox",
       "category": 1,
-      "image": "aaaaaaa"
+      "image": "aaaaaaa",
+      "price": 1555,
+      "people": 2
     },
     {
-      "id": 1,
+      "name": "jacket",
+      "size": "",
+      "color": "red",
+      "prand": "fox",
+      "price": 80,
+      "people": "1",
+      "category": "1",
+      "image": "",
+      "id": 2
+    },
+    {
       "name": "jeans",
-      "size": "2",
+      "size": "20",
       "color": "blue",
       "prand": "carter",
-      "category": 2,
-      "image": "aaaaaaa"
-    },
-    {
-      "id": "5",
-      "name": "ss",
-      "size": "ss",
-      "color": "sss",
-      "prand": "ss",
-      "category": "ss",
-      "image": "aaaaaaa"
-    },
-    {
-      "id": "8",
-      "name": "aaa",
-      "size": "aaa",
-      "color": "aaa",
-      "prand": "aaa",
+      "price": 150,
+      "people": "2",
       "category": "3",
-      "image": "aaaaaaa"
+      "image": "",
+      "id": 3
     },
     {
-      "id": "9",
-      "name": "mmm",
-      "size": "mmmm",
-      "color": "mmmm",
-      "prand": "mmm",
-      "category": "mmm",
-      "image": "C:\\fakepath\\46503720_2024475794239466_1297760665255018496_n.jpg"
+      "name": "shoes1",
+      "size": "40",
+      "color": "black",
+      "prand": "nike",
+      "price": 120,
+      "people": "1",
+      "category": "2",
+      "image": "",
+      "id": 4
     },
     {
-      "id": "10",
-      "name": "tttttt",
-      "size": "ttttt",
-      "color": "ttttt",
-      "prand": "tttttt",
-      "category": "tttt",
-      "image": "ttttSun Dec 23 2018 19:38:25 GMT+0200 (توقيت إسرائيل الرسمي)"
-    },
-    {
-      "id": "44",
-      "name": "syyy",
-      "size": "yyyy",
-      "color": "yyyy",
-      "prand": "yyy",
-      "category": "yy",
-      "image": "undefinedMon Dec 24 2018 01:59:04 GMT+0200 (توقيت إسرائيل الرسمي)"
-    },
-    {
-      "id": 45,
-      "name": "oooo",
-      "size": "oo",
-      "color": "ooo",
-      "prand": "oo",
+      "name": "lklk",
+      "size": "lklk",
+      "color": "lklk",
+      "prand": "lklk",
+      "price": 11,
+      "people": "1",
       "category": "1",
-      "image": "undefinedMon Dec 24 2018 02:03:45 GMT+0200 (توقيت إسرائيل الرسمي)"
+      "image": "C:\\fakepath\\46150224_535949573539159_8087953430217228288_n.jpg",
+      "id": 5
     },
     {
-      "id": 46,
-      "image": "undefinedMon Dec 24 2018 02:54:46 GMT+0200 (توقيت إسرائيل الرسمي)"
+      "name": "ooooo",
+      "size": "ooooo",
+      "color": "ooo",
+      "prand": "oooooo",
+      "price": 44,
+      "people": "1",
+      "category": "1",
+      "image": "C:\\fakepath\\46150224_535949573539159_8087953430217228288_n.jpg",
+      "id": 7
     }
   ],
   "users": [

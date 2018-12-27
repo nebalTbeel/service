@@ -1,17 +1,27 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable  } from '@angular/core';
+import {HttpClient,HttpParams} from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 import {Iproduct} from './models/product'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
+  isloginin = new Subject();
   constructor(private http: HttpClient) { }
  url= 'http://localhost:3000/products';
 
- login = false
+ setLogin(success){
+this.isloginin.next(success);
+
+ } 
+
+ getLogin(){
+   return this.isloginin.asObservable()
+ }
+
   public getProductById(id: number):Observable<Iproduct[]>{
 
     return this.http.get<Iproduct[]>(`${this.url}/${id}`);
@@ -23,6 +33,12 @@ export class ApiServiceService {
   return this.http.get<Iproduct[]>(this.url);
     } 
 
+    /************************ */
+    public getProductbycategory(cat,people):Observable<Iproduct[]>{
+      let httpp = new HttpParams().set('category',cat).set('people', people);
+    
+      return this.http.get<Iproduct[]>(this.url,{params:httpp});
+       } 
 /******************************** */
      addProduct(obj){
 
@@ -30,9 +46,9 @@ export class ApiServiceService {
     } 
 
     /*************************************** */
-    updateProduct(obj,id){
+    updateProduct(obj){
       console.log(obj);
-      let url = `${this.url}/${id}`;
+      let url = `${this.url}/${obj.id}`;
       return this.http.put<Iproduct>(url,obj)
 
     }
@@ -49,7 +65,7 @@ delete(id){
 /************************************ */
  
 public getUser():Observable<Iproduct[]>{
-  // console.log ('ddd');
+ 
   let urlUsers = 'http://localhost:3000/users'
  return this.http.get<Iproduct[]>(urlUsers);
    } 
@@ -61,6 +77,23 @@ upload(fileToUpload: any) {
   return this.http.post("../assets/img", input);
 }
 
+/************************************** */
+
+getMendata (){
+
+  return this.http.get<Iproduct[]>(this.url);
+
+}
+
+/*************************** */
+postFile(caption : string, fileToUpload :File){
+
+const endpoint = "../src/assets/img";
+const Formdata :FormData = new FormData();
+Formdata.append('image',fileToUpload,fileToUpload.name);
+Formdata.append('imageCaption',caption);
+  return this.http.post(endpoint,Formdata);
+}
 }
 
 

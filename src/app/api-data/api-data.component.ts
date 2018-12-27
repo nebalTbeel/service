@@ -20,10 +20,6 @@ export class ApiDataComponent implements OnInit {
     
   }
 
-  addNew(myform){
-console.log(myform);
-console.log(myform.value);
-  }
 product = [];
 show = false;
   ngOnInit() {
@@ -45,36 +41,39 @@ show = false;
    
 
 
-  addProduct(){
-/*
-    let fi = this.image.nativeElement;
-if (fi.files && fi.files[0]) {
-    let fileToUpload = fi.files[0];
+  addProduct(form){
+
+
+  /*  let fileToUpload = 'src/assets/img'
+   // let fi = form.controls.nativeElement;
+if (form.controls.image.value ) {
+    let fileToUpload = form.controls.image.value;
     this.api
         .upload(fileToUpload)
         .subscribe(res => {
-            console.log(res);
+            console.log('result'+res);
         });
     }
+console.log('image' +form.controls.image.value);
 */
+
    let las_obj = this.product[this.product.length-1];
    let last_id=this.product[this.product.length-1].id;
     last_id++;
     let image = this.image + Date()
 
+form.controls.id.value =  last_id;
+form.controls.image.value = image;
+console.log(form);
+let obj =form.value;
+console.log(form.valid);
 
-    let product ={
-      "id": last_id,
-      "name": this.name,
-      "size": this.size,
-      "color": this.color,
-      "prand": this.prand,
-      "category": this.category,
-      "image" : image
-        }
-      //  alert (image);
-          this.api.addProduct(product).subscribe(res =>this.product.push(res))
- 
+if(form.valid === false){
+
+
+
+   this.api.addProduct(obj).subscribe(res =>this.product.push(res))
+  }   
   }
   /************************************ */
   del
@@ -96,16 +95,15 @@ this.api.getProductById(id).subscribe(products =>this.prom =products )
 }
 
 updateProduct(){
-  let product ={
-    "id": this.id,
-    "name": this.name,
-    "size": this.size,
-    "color": this.color,
-    "prand": this.prand,
-    "category": this.category
-      }
-console.log(product)
-      this.api.updateProduct(product,this.id).subscribe(res =>this.product.push(res))
+
+  console.log(this.prom);
+  //let id = this.prom.id;
+
+  this.api.updateProduct(this.prom).subscribe(res =>this.product.push(res))
+
+
+
+
 
 }
 

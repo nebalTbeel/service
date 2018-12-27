@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {ApiServiceService} from '../app/api-service.service'
+import {ApiServiceService} from '../app/api-service.service';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,10 +8,23 @@ import {ApiServiceService} from '../app/api-service.service'
 })
 export class AppComponent {
   title = 'clothes';
-  constructor(private api: ApiServiceService) { 
+  //login
+  constructor(private api: ApiServiceService ,private router:Router) { 
 
+    
   }
-login = this.api.login ;
+
+  //localstorage.setItem()
+//   checkLogin(e){
+//     console.log(e);
+
+// if(e.success){
+
+//   this.isLogin = true
+//   //this.router.navigate(['/home']);
+// }
+//   }
+
 
 
 
